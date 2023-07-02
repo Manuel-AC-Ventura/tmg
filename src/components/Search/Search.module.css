@@ -1,0 +1,10 @@
+.search{
+    border-radius: 5px;
+    border: 2px solid #0a0a1a;
+}
+.search .input{
+    background: transparent;
+}
+.search .input::placeholder{
+    font-weight: normal;
+}
