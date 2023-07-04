@@ -8,10 +8,10 @@ import {Card} from "../../components/Card/index.jsx";
 
 export const Search = ()=>{
     const params = useParams();
-    const [movies, setMovies] = useState([]);
+    const [movies, setMovies] = useState([])
 
     useEffect(()=>{
-        async function searchMovie(){
+        async function search(){
             await fetch(`https://api.themoviedb.org/3/search/multi?query=${params.name}&include_adult=true&language=pt-BR&page=1`, {
                 method: 'GET',
                 headers: {
@@ -20,12 +20,10 @@ export const Search = ()=>{
                 }
             })
                 .then(req=>req.json())
-                .then(res=>{
-                    setMovies(res.results)
-                })
+                .then(res=>setMovies(res.results))
                 .catch(error=>console.log(error))
         }
-        searchMovie()
+        search()
     }, [params.name])
 
     return(
@@ -33,17 +31,17 @@ export const Search = ()=>{
             <Header/>
             <h2 className="text-xl font-semibold px-4 my-2">Resultados:</h2>
             <Container>
-                {
-                    movies.map(movie=>
-                        <Card
-                            id={movie.id}
-                            key={movie.id}
-                            cover={movie.poster_path}
-                            media_type={movie.media_type}
-                            title={movie.title || movie.name}
-                        />
-                    )
-                }
+            {
+                movies.map(movie=>
+                    <Card
+                        id={movie.id}
+                        key={movie.id}
+                        cover={movie.poster_path}
+                        media_type={movie.media_type}
+                        title={movie.title || movie.name}
+                    />
+                )
+            }
             </Container>
         </>
     )

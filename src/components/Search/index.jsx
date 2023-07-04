@@ -1,6 +1,6 @@
 import styles from './Search.module.css'
 import {MagnifyingGlassIcon} from "@heroicons/react/24/solid/index.js";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 
 export const Search = ()=>{
@@ -10,7 +10,6 @@ export const Search = ()=>{
         <form className={`w-11/12 h-14 flex my-2 self-center ${styles.search}`} action={`/search/${search}`}>
             <input
                 type="text"
-                name="movie"
                 value={search}
                 placeholder="Pesquisar..."
                 onChange={e=>setSearch(e.target.value)}
