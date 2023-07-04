@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 export const Card = (props)=>{
     return(
-        <Link className="w-40" to={`/movie/${props.id}`}>
+        <Link className="w-full" to={`/${props.media_type}/${props.id}`}>
             <img
                 alt={props.title}
                 className="rounded-sm"

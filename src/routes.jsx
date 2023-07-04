@@ -12,7 +12,7 @@ export const AppRoutes = ()=>{
                 <Route path="/" element={ <Home/> } />
                 <Route path="/home" element={ <Home/> } />
                 <Route path="/search/:name" element={ <Search/> } />
-                <Route path="/movie/:id" element={ <Movie/> } />
+                <Route path="/:media_type/:id" element={ <Movie/> } />
                 <Route path="/*" element={ <Error/> } />
             </Routes>
         </BrowserRouter>

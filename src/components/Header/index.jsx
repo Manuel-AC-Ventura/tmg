@@ -13,7 +13,7 @@ export const Header = ()=>{
             <nav className="w-full h-full px-4 flex items-center justify-between">
                 <Link className="flex gap-1 items-center font-bold" to="/">
                     <PlayCircleIcon className="w-8 h-8"/>
-                    <h1 className="text-xl">TMG</h1>
+                    <h1 className="text-xl">The Movie Guide</h1>
                 </Link>
                 <button onClick={()=>setMenu(!menu)}>
                     {
