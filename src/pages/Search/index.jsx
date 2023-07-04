@@ -12,7 +12,7 @@ export const Search = ()=>{
 
     useEffect(()=>{
         async function searchMovie(){
-            await fetch(`https://api.themoviedb.org/3/search/movie?query=${params.name}&include_adult=true&language=pt-BR&page=1`, {
+            await fetch(`https://api.themoviedb.org/3/search/multi?query=${params.name}&include_adult=true&language=pt-BR&page=1`, {
                 method: 'GET',
                 headers: {
                     accept: 'application/json',
@@ -31,6 +31,7 @@ export const Search = ()=>{
     return(
         <>
             <Header/>
+            <h2 className="text-xl font-semibold px-4 my-2">Resultados:</h2>
             <Container>
                 {
                     movies.map(movie=>
@@ -38,8 +39,8 @@ export const Search = ()=>{
                             id={movie.id}
                             key={movie.id}
                             cover={movie.poster_path}
+                            media_type={movie.media_type}
                             title={movie.title || movie.name}
-
                         />
                     )
                 }
