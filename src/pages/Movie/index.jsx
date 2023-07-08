@@ -7,8 +7,6 @@ import {Header} from "../../components/Header/index.jsx";
 export const Movie = ()=>{
     const params = useParams();
     const [movie, setMovie] = useState([]);
-    const [loaded, setLoaded] = useState(true);
-
 
     useEffect(()=>{
         async function getMovie(){
