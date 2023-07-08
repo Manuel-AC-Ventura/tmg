@@ -21,7 +21,10 @@ export const Search = ()=>{
             })
                 .then(req=>req.json())
                 .then(res=>setMovies(res.results))
-                .catch(error=>console.log(error))
+                .catch(error=> {
+                    console.log(error)
+                    setTimeout(search(), 1000)
+                })
         }
         search()
     }, [params.name])

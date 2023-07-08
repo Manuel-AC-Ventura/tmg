@@ -20,7 +20,10 @@ export const Home = ()=>{
             })
                 .then(req=>req.json())
                 .then(res=>setMovies(res.results))
-                .catch(error=>console.log(error))
+                .catch(error=> {
+                    console.log(error)
+                    setTimeout(getMovies(), 1000)
+                })
         }
         getMovies()
     }, [])

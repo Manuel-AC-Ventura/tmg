@@ -1,12 +1,14 @@
 import {API_KEY} from "../../App.jsx";
-import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
+import {useEffect, useState} from "react";
 import {Header} from "../../components/Header/index.jsx";
 
 
 export const Movie = ()=>{
     const params = useParams();
     const [movie, setMovie] = useState([]);
+    const [loaded, setLoaded] = useState(true);
+
 
     useEffect(()=>{
         async function getMovie(){
@@ -18,11 +20,14 @@ export const Movie = ()=>{
                 }
             })
                 .then(req=>req.json())
-                .then(res=> {
+                .then(res=>{
                     setMovie(res)
                     console.log(res)
                 })
-                .catch(error=>console.log(error))
+                .catch(error=>{
+                    console.log(error)
+                    setTimeout(getMovie(), 1000)
+                })
         }
         getMovie()
     }, [params.id])
