@@ -10,10 +10,10 @@ export const AppRoutes = ()=>{
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={ <Home/> } />
+                <Route path="/*" element={ <Error/> } />
                 <Route path="/home" element={ <Home/> } />
                 <Route path="/search/:name" element={ <Search/> } />
                 <Route path="/:media_type/:id" element={ <Movie/> } />
-                <Route path="/*" element={ <Error/> } />
             </Routes>
         </BrowserRouter>
     )
