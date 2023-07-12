@@ -20,7 +20,6 @@ export const Movie = ()=>{
                 .then(req=>req.json())
                 .then(res=>{
                     setMovie(res)
-                    console.log(res)
                 })
                 .catch(error=>{
                     console.log(error)
