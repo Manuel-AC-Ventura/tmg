@@ -22,11 +22,11 @@ export const Home = ()=>{
                 .then(res=>setMovies(res.results))
                 .catch(error=> {
                     console.log(error)
-                    setTimeout(getMovies(), 1000)
+                    setTimeout(getMovies(), 5000)
                 })
         }
         getMovies()
-    }, [])
+    }, [movies])
 
     return(
         <>

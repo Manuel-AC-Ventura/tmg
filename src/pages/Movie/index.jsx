@@ -23,7 +23,7 @@ export const Movie = ()=>{
                 })
                 .catch(error=>{
                     console.log(error)
-                    setTimeout(getMovie(), 1000)
+                    setTimeout(getMovie(), 5000)
                 })
         }
         getMovie()

@@ -1,9 +1,9 @@
 import {API_KEY} from "../../App.jsx";
 import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
+import {Card} from "../../components/Card/index.jsx";
 import {Header} from "../../components/Header/index.jsx";
 import {Container} from "../../components/Container/index.jsx";
-import {Card} from "../../components/Card/index.jsx";
 
 
 export const Search = ()=>{
@@ -23,7 +23,7 @@ export const Search = ()=>{
                 .then(res=>setMovies(res.results))
                 .catch(error=> {
                     console.log(error)
-                    setTimeout(search(), 1000)
+                    setTimeout(search(), 5000)
                 })
         }
         search()
@@ -32,7 +32,7 @@ export const Search = ()=>{
     return(
         <>
             <Header/>
-            <h2 className="text-xl font-semibold px-4 my-2">Resultados:</h2>
+            <h2 className="text-xl font-semibold px-4 my-2">Resultados de: {params.name}</h2>
             <Container>
             {
                 movies.map(movie=>

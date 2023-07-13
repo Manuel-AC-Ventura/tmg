@@ -23,7 +23,8 @@ export default {
             'gray-dark': '#273444',
             'gray': '#8492a6',
             'gray-light': '#d3dce6',
-            'dark-blue': '#040926'
+            'dark-blue': '#040926',
+            'super-dark-blue': '#04040E'
         },
         fontFamily: {
             sans: ['Graphik', 'sans-serif'],
