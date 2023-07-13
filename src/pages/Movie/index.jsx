@@ -2,11 +2,13 @@ import {API_KEY} from "../../App.jsx";
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {Header} from "../../components/Header/index.jsx";
+import {Trailer} from "../../components/Trailer/index.jsx";
 
 
 export const Movie = ()=>{
     const params = useParams();
     const [movie, setMovie] = useState([]);
+    const [trailer, setTrailer] = useState(false)
 
     useEffect(()=>{
         async function getMovie(){
@@ -23,7 +25,7 @@ export const Movie = ()=>{
                 })
                 .catch(error=>{
                     console.log(error)
-                    setTimeout(getMovie(), 5000)
+                    setTimeout(getMovie(), 10000)
                 })
         }
         getMovie()
@@ -33,12 +35,13 @@ export const Movie = ()=>{
         <>
             <Header/>
             {
-                <article className="px-3 mt-5">
+                <article className="px-3 mt-5 mb-3">
                     <div className="flex gap-2">
                         <img
                             className="w-40 m-0"
-                            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                             alt={movie.title || movie.name}
+                            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                            onClick={() => setTrailer(!trailer)}
                         />
                         <div className="flex flex-col gap-1">
                             <h2 className="text-lg text-left font-semibold">{movie.title || movie.name}</h2>
@@ -56,7 +59,8 @@ export const Movie = ()=>{
                             </ul>
                         </div>
                     </div>
-                    <p className="text-xl text-justify mt-4"><b>Sinopese:</b> {movie.overview}</p>
+                    <p className="text-xl text-justify px-1 mt-4"><b>Sinopese:</b> {movie.overview}</p>
+                    {trailer && <Trailer id={params.id} />}
                 </article>
             }
         </>

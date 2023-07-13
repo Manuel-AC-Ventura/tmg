@@ -23,7 +23,7 @@ export const Search = ()=>{
                 .then(res=>setMovies(res.results))
                 .catch(error=> {
                     console.log(error)
-                    setTimeout(search(), 5000)
+                    setTimeout(search(), 10000)
                 })
         }
         search()

@@ -22,7 +22,7 @@ export const Home = ()=>{
                 .then(res=>setMovies(res.results))
                 .catch(error=> {
                     console.log(error)
-                    setTimeout(getMovies(), 5000)
+                    setTimeout(getMovies(), 10000)
                 })
         }
         getMovies()
