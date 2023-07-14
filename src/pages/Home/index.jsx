@@ -1,9 +1,9 @@
 import {API_KEY} from "../../App.jsx";
 import {useEffect, useState} from "react";
-import {Header} from "../../components/Header/index.jsx";
-import {Search} from "../../components/Search/index.jsx";
-import {Container} from "../../components/Container/index.jsx";
 import {Card} from "../../components/Card/index.jsx";
+import {Header} from "../../components/Header/index.jsx";
+import {Container} from "../../components/Container/index.jsx";
+import {SearchComponent} from "../../components/Search/index.jsx";
 
 
 export const Home = ()=>{
@@ -31,7 +31,7 @@ export const Home = ()=>{
     return(
         <>
             <Header/>
-            <Search/>
+            <SearchComponent/>
             <h2 className="text-xl font-semibold px-5 my-2">Novidades</h2>
             <Container>
                 {

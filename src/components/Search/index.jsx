@@ -3,7 +3,7 @@ import {MagnifyingGlassIcon} from "@heroicons/react/24/solid/index.js";
 import {useState} from "react";
 
 
-export const Search = ()=>{
+export const SearchComponent = ()=>{
     const [search, setSearch] = useState("");
 
     return(

@@ -4,6 +4,7 @@ import {useParams} from "react-router-dom";
 import {Card} from "../../components/Card/index.jsx";
 import {Header} from "../../components/Header/index.jsx";
 import {Container} from "../../components/Container/index.jsx";
+import {SearchComponent} from "../../components/Search/index.jsx";
 
 
 export const Search = ()=>{
@@ -32,6 +33,7 @@ export const Search = ()=>{
     return(
         <>
             <Header/>
+            <SearchComponent/>
             <h2 className="text-xl font-semibold px-4 my-2">Resultados de: {params.name}</h2>
             <Container>
             {
