@@ -34,7 +34,7 @@ export const Search = ()=>{
         <>
             <Header/>
             <SearchComponent/>
-            <h2 className="text-xl font-semibold px-4 my-2">Resultados de: {params.name}</h2>
+            <h2 className="text-xl font-semibold px-5 my-2">Resultados de: {params.name}</h2>
             <Container>
             {
                 movies.map(movie=>
